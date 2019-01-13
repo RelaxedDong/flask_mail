@@ -1,0 +1,5 @@
+*.js linguist-language=flask
+
+*.css linguist-language=flask
+
+*.html linguist-language=flask
