@@ -6,9 +6,9 @@
 MAIL_SERVER = "smtp.qq.com"
 MAIL_PORT = "587"
 MAIL_USE_TLS = True
-MAIL_USERNAME = "pepper.hot@qq.com"
+MAIL_USERNAME = "xxx@qq.com" # 你的邮箱
 MAIL_PASSWORD = "xxxxxx" #生成的授权码
-MAIL_DEFAULT_SENDER = "pepper.hot@qq.com"
+MAIL_DEFAULT_SENDER = "xxx@qq.com" # 你的邮箱
 
 
 # MAIL_SERVER	localhost	电子邮件服务器的主机名或IP地址
