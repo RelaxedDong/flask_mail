@@ -5,6 +5,9 @@ import os
 path = os.path.dirname(__file__)
 filename = os.path.join(path,'test.jpg')
 
+recipients = []
+# 输入邮箱
+assert recipients
 mail = Mail()
 
 app = Flask(__name__)
@@ -15,7 +18,7 @@ mail.init_app(app)
 #发送文本
 @app.route('/email_send_charactor/')
 def email_send_charactor():
-    message = Message(subject='hello flask-mail',recipients=['1417766861@qq.com'],body='flask-mail测试代码')
+    message = Message(subject='hello flask-mail',recipients=recipients,body='flask-mail测试代码')
     try:
         mail.send(message)
         return '发送成功，请注意查收~'
@@ -27,7 +30,7 @@ def email_send_charactor():
 #发送一个html
 @app.route('/email_send_html/')
 def email_send_html():
-    message = Message(subject='hello flask-mail',recipients=['1417766861@qq.com'])
+    message = Message(subject='hello flask-mail',recipients=recipients)
     try:
         #发送渲染一个模板
         message.html = render_template('email_temp.html')
@@ -41,7 +44,7 @@ def email_send_html():
 #发送附带附件的邮件
 @app.route('/email_send_attach/')
 def email_send_attach():
-    message = Message(subject='hello flask-mail',recipients=['1417766861@qq.com'],body='我是一个附件邮件')
+    message = Message(subject='hello flask-mail',recipients=recipients,body='我是一个附件邮件')
     try:
         # message.attach邮件附件添加
         # 方法attach(self,
